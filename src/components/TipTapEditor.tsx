@@ -80,7 +80,7 @@ const TipTapEditor = ({ note }: Props) => {
 
   return (
     <>
-      <div className="flex">
+      <div className="flex justify-between">
         {editor && <TipTapMenuBar editor={editor} />}
         <Button disabled variant={"outline"}>
           {saveNote.isPending ? (

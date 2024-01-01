@@ -1,3 +1,4 @@
+import DeleteButton from "@/components/DeleteButton";
 import TipTapEditor from "@/components/TipTapEditor";
 import { Button } from "@/components/ui/button";
 import { clerk } from "@/lib/clerk-server";
@@ -35,6 +36,7 @@ const NoteBookPage = async ({ params: { noteId } }: Props) => {
   return (
     <div className="min-h-screen grainy p-8">
       <div className="max-w-4xl mx-auto">
+        
         <div className="border shadow-xl border-stone-200 rounded-lg p-4 flex items-center">
           <Link href="/dashboard">
             <Button className="bg-green-600" size="sm">
@@ -47,7 +49,9 @@ const NoteBookPage = async ({ params: { noteId } }: Props) => {
           </span>
           <span className="inline-block mx-1">/</span>
           <span className="text-stone-500 font-semibold">{note.name}</span>
-          <div className="ml-auto">DELETE BUTTON</div>
+          <div className="ml-auto">
+            <DeleteButton noteId={note.id} />
+          </div>
         </div>
 
         <div className="h-4"></div>
